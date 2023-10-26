@@ -25,7 +25,7 @@ namespace Tima.BLL
             passwordEntries.Add(new PasswordEntry(website, username, encryptedPassword));
         }
 
-        // Метод для получения всех записей паролей (с отображением паролей как "********")
+        // Метод для получения всех записей паролей 
         public List<PasswordEntry> GetAllEntries()
         {
             return passwordEntries
@@ -53,10 +53,8 @@ namespace Tima.BLL
                 .ToList();
         }
 
-        // Метод для шифрования пароля (реализовано с помощью XOR, но не рекомендуется для реальных приложений)
         public string EncryptPassword(string password)
         {
-            // Реализация XOR-шифрования
             char[] passwordChars = password.ToCharArray();
             char[] encryptedChars = new char[passwordChars.Length];
             for (int i = 0; i < passwordChars.Length; i++)
@@ -66,10 +64,8 @@ namespace Tima.BLL
             return new string(encryptedChars);
         }
 
-        // Метод для расшифровки пароля (реализовано с помощью XOR, но не рекомендуется для реальных приложений)
         public string DecryptPassword(string encryptedPassword)
         {
-            // Реализация XOR-дешифрования
             char[] encryptedChars = encryptedPassword.ToCharArray();
             char[] decryptedChars = new char[encryptedChars.Length];
             for (int i = 0; i < encryptedChars.Length; i++)
